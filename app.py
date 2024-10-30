@@ -195,4 +195,4 @@ else:
         fig.update_layout(width = 300, height = 500)
         st.plotly_chart(fig,use_container_width=True)
 
-st.markdown('contact - sagarsharma23112@gmail.com')
+    st.markdown('contact - sagarsharma23112@gmail.com')
