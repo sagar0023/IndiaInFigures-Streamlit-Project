@@ -10,18 +10,16 @@ st.markdown('<style>div.block-container{padding-top:2rem;}</style>',unsafe_allow
 census = pd.read_csv('census2011.csv')
 # census.set_index('State',inplace=True)
 list_of_states = list(census['State'].unique())
-list_of_states.insert(0,'Overall India')
+
 
 st.sidebar.header("Select Parameters")
-state_selected = st.sidebar.multiselect("Select State Or Country",list_of_states)
+state_selected = st.sidebar.multiselect("Select State",list_of_states)
 
 if not state_selected:
     pass
 else:
-    if 'Overall India' in state_selected:
-        state_df = census
-    else: 
-        state_df = census[census.State.isin(state_selected)].copy()
+
+    state_df = census[census.State.isin(state_selected)].copy()
 
     district_selected = st.sidebar.multiselect("Select District",state_df.District.unique())
 
